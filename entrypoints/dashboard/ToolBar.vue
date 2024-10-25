@@ -246,12 +246,21 @@ async function exportDocx() {
     <v-icon icon="mdi-view-dashboard" class="ml-4"></v-icon>
     <v-toolbar-title class="font-extrabold">
       Dashboard
+      
       <v-btn :prepend-icon="store.isLoading ? 'mdi-sync' : 'mdi-cloud'">{{
         store.isLoading ? "Syncing" : "Synced to Cloud"
       }}</v-btn>
     </v-toolbar-title>
 
     <v-spacer></v-spacer>
+    <v-btn
+        rounded="xl"
+        prepend-icon="mdi-open-in-new"
+        href="https://dms-docs.pages.dev/"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Docs</v-btn
+      >
     <v-btn
       variant="tonal"
       rounded="xl"

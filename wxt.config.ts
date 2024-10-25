@@ -6,13 +6,15 @@ export default defineConfig({
   manifest: {
     name: "AutoDMS",
     description: "Extension for automating DMS duties",
-    version: "0.2.0",
+    version: "0.3.0",
     host_permissions: [
       "https://*.digitimes.com.tw/*",
       "https://*.ctee.com.tw/*",
       "https://*.chinatimes.com/*",
       "https://buzzorange.com/*",
-      "https://www.moneydj.com/*"
+      "https://www.moneydj.com/*",
+      "https://www.bnext.com.tw/*",
+      "https://www.wealth.com.tw/*"
     ],
   },
 });
