@@ -1,13 +1,13 @@
 import { reactive } from "vue";
 import axios from "axios";
-// const editURL = "http://127.0.0.1:5001/compassprdms/asia-east1/update/?id=";
-// const deleteURL = "http://127.0.0.1:5001/compassprdms/asia-east1/deleteDoc/?id=";
-// const addURL = "http://127.0.0.1:5001/compassprdms/asia-east1/addhtml";
-// const manualURL = "http://127.0.0.1:5001/compassprdms/asia-east1/manualadd";
-const editURL = "https://update-ud47er3zea-de.a.run.app/?id=";
-const deleteURL = "https://deletedoc-ud47er3zea-de.a.run.app/?id=";
-const addURL = "https://addhtml-ud47er3zea-de.a.run.app";
-const manualURL = "https://manualadd-ud47er3zea-de.a.run.app";
+const editURL = "http://127.0.0.1:5001/compassprdms/asia-east1/update/?id=";
+const deleteURL = "http://127.0.0.1:5001/compassprdms/asia-east1/deleteDoc/?id=";
+const addURL = "http://127.0.0.1:5001/compassprdms/asia-east1/addhtml";
+const manualURL = "http://127.0.0.1:5001/compassprdms/asia-east1/manualadd";
+// const editURL = "https://update-ud47er3zea-de.a.run.app/?id=";
+// const deleteURL = "https://deletedoc-ud47er3zea-de.a.run.app/?id=";
+// const addURL = "https://addhtml-ud47er3zea-de.a.run.app";
+// const manualURL = "https://manualadd-ud47er3zea-de.a.run.app";
 
 export const store = reactive({
   count: 0,
@@ -80,28 +80,28 @@ export const store = reactive({
     this.isLoading = true;
     let response;
     const APIURL =
-      type == "priority"
+      type === "priority"
         ? editURL + obj.id + "&edit=" + type
         : editURL + this.currentlyEditing.id + "&edit=" + type;
 
     try {
       response =
-        type == "data"
+        type === "data"
           ? await axios.post(APIURL, this.currentlyEditing)
-          : type == "priority"
+          : type === "priority"
           ? await axios.post(APIURL, {
               sourceID: obj.id,
               sourceCategory: obj.category,
               sourcePriority: obj.priority,
               targetPriority:
-                direction == "down" ? obj.priority + 1 : obj.priority - 1,
+                direction === "down" ? obj.priority + 1 : obj.priority - 1,
             })
           : await axios.post(APIURL);
     } catch (error) {
-      conso;
+      console.log(error);
     }
 
-    type == "select" || type == "unselect"
+    type === "select" || type === "unselect"
       ? this.setCurrentlyEditing(this.currentlyEditing.id)
       : "";
     console.log(response);

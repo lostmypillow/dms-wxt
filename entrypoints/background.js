@@ -16,6 +16,8 @@ export default defineBackground(() => {
         .catch((error) => {
           console.error("Error creating tab or injecting script:", error);
         });
+    } else if (message.action === "processLink") {
+
     }
   });
 });

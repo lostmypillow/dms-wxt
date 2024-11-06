@@ -14,8 +14,8 @@ import CardContainer from "./CardContainer.vue";
 import AddDialog from "./addDialog.vue";
 
 const db = getFirestore(getApp());
-// connectFirestoreEmulator(db, "127.0.0.1", 8080);
-
+connectFirestoreEmulator(db, "127.0.0.1", 8080);
+console.log(store.getUDate())
 const q = query(collection(db, store.getUDate()));
 const unsub = onSnapshot(q, (snapshot) => {
   snapshot.docChanges().forEach((change) => {
