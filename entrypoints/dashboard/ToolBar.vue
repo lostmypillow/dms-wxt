@@ -253,6 +253,7 @@ async function exportDocx() {
     </v-toolbar-title>
 
     <v-spacer></v-spacer>
+    <v-btn @click="hello">test</v-btn>
     <v-btn
         rounded="xl"
         prepend-icon="mdi-open-in-new"
