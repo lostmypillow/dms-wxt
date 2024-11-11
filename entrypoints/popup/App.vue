@@ -34,7 +34,7 @@ const auth = getAuth(app);
   <div
     class="w-[300px] h-[200px] flex flex-col items-center justify-start p-4 gap-4"
   >
-    <h1 class="text-xl font-extrabold">AutoDMS 0.3.0</h1>
+    <h1 class="text-xl font-extrabold">AutoDMS 0.3.1</h1>
     <v-btn
       rounded="xl"
       size="large"

@@ -98,7 +98,7 @@ export const store = reactive({
             })
           : await axios.post(APIURL);
     } catch (error) {
-      conso;
+      console.log('');
     }
 
     type == "select" || type == "unselect"
